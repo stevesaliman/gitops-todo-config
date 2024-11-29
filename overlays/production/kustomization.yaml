@@ -11,6 +11,8 @@ configMapGenerator:
 - behavior: merge
   literals:
   - POSTGRES_HOST="postgres-prod-postgresql.gitops-todo.svc.cluster.local"
+  - POSTGRES_DB="todo_db"
+  - POSTGRES_USER="todo_user"
   name: postgres-config
 labels:
 - includeSelectors: true
