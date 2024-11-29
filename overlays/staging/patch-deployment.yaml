@@ -1,12 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-app
+    name: todo-app
 spec:
-  template:
-    spec:
-      containers:
-      - name: todo-app
-        env:
-        - name: DATABASE_URL
-          value: "postgres://todo_user:staging_password@todo-db.staging.svc.cluster.local:5432/todo_db_staging"
+    template:
+        spec:
+            containers:
+                -   name: todo-app
+                    image: dhinojosa/gitops-todo:latest
+                    env:
+                        -   name: DATABASE_URL
+                            value: "postgres://todo_user:staging_password@todo-db.staging.svc.cluster.local:5432/todo_db_staging"
