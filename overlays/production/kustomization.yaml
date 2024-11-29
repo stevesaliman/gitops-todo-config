@@ -10,7 +10,7 @@ patches:
 configMapGenerator:
 - behavior: merge
   literals:
-  - POSTGRES_HOST="postgres-prod.gitops-todo.svc.cluster.local"
+  - POSTGRES_HOST="postgres-prod-postgresql.gitops-todo.svc.cluster.local"
   name: postgres-config
 labels:
 - includeSelectors: true
