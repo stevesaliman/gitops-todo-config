@@ -14,26 +14,28 @@ spec:
                 app: todo-app
         spec:
             containers:
-                - name: todo-app
-                  image: dhinojosa/gitops-todo:latest
-                  env:
-                      - name: DB_HOST
-                        valueFrom:
-                            configMapKeyRef:
-                                name: postgres-config
-                                key: POSTGRES_HOST
-                      - name: DB_NAME
-                        valueFrom:
-                            configMapKeyRef:
-                                name: postgres-config
-                                key: POSTGRES_DB
-                      - name: DB_USER
-                        valueFrom:
-                            configMapKeyRef:
-                                name: postgres-config
-                                key: POSTGRES_USER
-                      - name: DB_PASSWORD
-                        valueFrom:
-                            secretKeyRef:
-                                name: postgres-secret
-                                key: postgresql-password
+                -   name: todo-app
+                    image: dhinojosa/gitops-todo:latest
+                    ports:
+                        -   containerPort: 3000
+                    env:
+                        -   name: DB_HOST
+                            valueFrom:
+                                configMapKeyRef:
+                                    name: postgres-config
+                                    key: POSTGRES_HOST
+                        -   name: DB_NAME
+                            valueFrom:
+                                configMapKeyRef:
+                                    name: postgres-config
+                                    key: POSTGRES_DB
+                        -   name: DB_USER
+                            valueFrom:
+                                configMapKeyRef:
+                                    name: postgres-config
+                                    key: POSTGRES_USER
+                        -   name: DB_PASSWORD
+                            valueFrom:
+                                secretKeyRef:
+                                    name: postgres-secret
+                                    key: postgresql-password
