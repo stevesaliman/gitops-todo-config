@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: todo-app
+    namespace: gitops-todo
+spec:
+    ingressClassName: nginx
+    tls:
+        -   hosts:
+                - moltenjava.net
+            secretName: molten-java-tls
+    rules:
+        -   host: staging.moltenjava.net
+            http:
+                paths:
+                    -   path: /mild-temper
+                        pathType: Prefix
+                        backend:
+                            service:
+                                name: todo-app
+                                port:
+                                    number: 8080
