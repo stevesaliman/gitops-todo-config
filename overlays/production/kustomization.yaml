@@ -1,7 +1,5 @@
 namespace: production
 resources:
     - ../../base
-    - namespace.yaml
 patchesStrategicMerge:
     - patch-deployment.yaml
-    - patch-database.yaml
