@@ -9,3 +9,9 @@ spec:
             http:
                 paths:
                     -   path: /mild-temper
+                        pathType: Prefix
+                        backend:
+                            service:
+                                name: todo-app
+                                port:
+                                    number: 8080
