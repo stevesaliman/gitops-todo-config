@@ -10,4 +10,4 @@ spec:
                     image: dhinojosa/gitops-todo:2024.11.29.053507
                     env:
                         -   name: DATABASE_URL
-                            value: "postgres://todo_user:staging_password@todo-db.staging.svc.cluster.local:5432/todo_db_staging"
+                            value: "postgres://todo_user:new_password@todo-db.staging.svc.cluster.local:5432/todo_db_staging"
