@@ -12,7 +12,7 @@ configMapGenerator:
   literals:
   - POSTGRES_HOST="postgres-staging-postgresql.gitops-todo.svc.cluster.local"
   - POSTGRES_DB="todo_db"
-  - POSTGRES_USER="todo_user"
+  - POSTGRES_USER="postgres"
   name: postgres-config
 labels:
 - includeSelectors: true
