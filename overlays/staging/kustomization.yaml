@@ -3,6 +3,16 @@ resources:
 - ../../base
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namePrefix: mighty-winter-
 patches:
 - path: patch-deployment.yaml
 - path: patch-ingress.yaml
+configMapGenerator:
+- behavior: merge
+  literals:
+  - POSTGRES_HOST="postgres-staging.gitops-todo.svc.cluster.local"
+  name: postgres-config
+labels:
+- includeSelectors: true
+  pairs:
+    app: mighty-winter-todo-app

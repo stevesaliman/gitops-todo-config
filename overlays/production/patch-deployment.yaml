@@ -2,9 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: todo-app
+    namespace: gitops-todo
 spec:
     template:
         spec:
             containers:
-                -   name: todo-app
-                    image: dhinojosa/gitops-todo:2024.11.29.053507
+                - name: todo-app
+                  image: dhinojosa/gitops-todo:2024.11.29.053507
+

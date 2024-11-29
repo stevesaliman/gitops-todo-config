@@ -1,21 +1,39 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-app
-  labels:
-    app: todo-app
+    name: todo-app
+    namespace: gitops-todo
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: todo-app
-  template:
-    metadata:
-      labels:
-        app: todo-app
-    spec:
-      containers:
-      - name: todo-app
-        image: <dockerhub_username>/gitops-todo:latest
-        ports:
-        - containerPort: 8080
+    replicas: 1
+    selector:
+        matchLabels:
+            app: todo-app
+    template:
+        metadata:
+            labels:
+                app: todo-app
+        spec:
+            containers:
+                - name: todo-app
+                  image: dhinojosa/gitops-todo:latest
+                  env:
+                      - name: POSTGRES_HOST
+                        valueFrom:
+                            configMapKeyRef:
+                                name: postgres-config
+                                key: POSTGRES_HOST
+                      - name: POSTGRES_DB
+                        valueFrom:
+                            configMapKeyRef:
+                                name: postgres-config
+                                key: POSTGRES_DB
+                      - name: POSTGRES_USER
+                        valueFrom:
+                            configMapKeyRef:
+                                name: postgres-config
+                                key: POSTGRES_USER
+                      - name: POSTGRES_PASSWORD
+                        valueFrom:
+                            secretKeyRef:
+                                name: postgres-secret
+                                key: postgresql-password
