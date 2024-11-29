@@ -10,7 +10,7 @@ spec:
                 -   name: todo-app
                     image: dhinojosa/gitops-todo:2024.11.29.053507
                     env:
-                        - name: POSTGRES_PASSWORD
+                        - name: DB_PASSWORD
                           valueFrom:
                               secretKeyRef:
                                   name: postgres-production-postgresql
