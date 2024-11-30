@@ -14,4 +14,4 @@ spec:
                           valueFrom:
                               secretKeyRef:
                                   name: postgres-production-postgresql
-                                  key: password
+                                  key: postgres-password
