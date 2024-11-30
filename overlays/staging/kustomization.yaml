@@ -3,10 +3,8 @@ resources:
 - ../../base
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namePrefix: mighty-winter-
 patches:
 - path: patch-deployment.yaml
-- path: patch-ingress.yaml
 configMapGenerator:
 - behavior: merge
   literals:
@@ -14,7 +12,3 @@ configMapGenerator:
   - POSTGRES_DB="todo_db"
   - POSTGRES_USER="postgres"
   name: postgres-config
-labels:
-- includeSelectors: true
-  pairs:
-    app: mighty-winter-todo-app

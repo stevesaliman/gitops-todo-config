@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
     name: todo-app
     namespace: gitops-todo
-    annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
     ingressClassName: nginx
     tls:
@@ -15,7 +13,7 @@ spec:
         -   host: staging.moltenjava.net
             http:
                 paths:
-                    -   path: /mild-temper
+                    -   path: /
                         pathType: Prefix
                         backend:
                             service:
