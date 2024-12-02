@@ -4,7 +4,7 @@ metadata:
     name: todo-app
     namespace: gitops-todo
 spec:
-    replicas: 1
+    replicas: 3
     selector:
         matchLabels:
             app: todo-app
