@@ -9,3 +9,9 @@ spec:
             containers:
                 -   name: todo-app
                     image: dhinojosa/gitops-todo:2024.11.29.053507
+                    env:
+                        -   name: DB_PASSWORD
+                            valueFrom:
+                                secretKeyRef:
+                                    name: my-postgres-postgresql
+                                    key: password
