@@ -8,7 +8,7 @@ patches:
 configMapGenerator:
 - behavior: merge
   literals:
-  - POSTGRES_HOST="staging-postgres.c6xa6z6daoyd.us-west-2.rds.amazonaws.com"
+  - POSTGRES_HOST="tododb-postgresql"
   - POSTGRES_DB="todo_db"
-  - POSTGRES_USER="postgres"
+  - POSTGRES_USER="admin"
   name: postgres-config
