@@ -5,12 +5,8 @@ metadata:
     namespace: gitops-todo
 spec:
     ingressClassName: nginx
-    tls:
-        -   hosts:
-                - moltenjava.net
-            secretName: molten-java-tls
     rules:
-        -   host: staging.moltenjava.net
+        -   host: staging.tiered-planet.net
             http:
                 paths:
                     -   path: /

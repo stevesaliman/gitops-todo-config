@@ -5,7 +5,7 @@ metadata:
     namespace: gitops-todo
 spec:
     rules:
-        -   host: prod.moltenjava.net
+        -   host: prod.tiered-planet.net
             http:
                 paths:
                     -   path: /
