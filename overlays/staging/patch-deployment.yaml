@@ -15,3 +15,4 @@ spec:
                                 secretKeyRef:
                                     name: my-postgres-postgresql
                                     key: password
+    replicas: 5
