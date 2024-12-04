@@ -8,7 +8,7 @@ patches:
 configMapGenerator:
 - behavior: merge
   literals:
-  - POSTGRES_HOST="tododb-postgresql"
+  - POSTGRES_HOST="my-postgres-postgresql"
   - POSTGRES_DB="todo_db"
   - POSTGRES_USER="admin"
   name: postgres-config
