@@ -6,4 +6,4 @@ configMapGenerator:
     - name: postgres-config
       literals:
           - POSTGRES_DB="todo_db"
-          - POSTGRES_USER="todo_user"
+          - POSTGRES_USER="postgres"

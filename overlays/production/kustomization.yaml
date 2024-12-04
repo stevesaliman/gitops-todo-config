@@ -9,7 +9,7 @@ patches:
 configMapGenerator:
 - behavior: merge
   literals:
-  - POSTGRES_HOST="postgres-production-postgresql.gitops-todo.svc.cluster.local"
+  - POSTGRES_HOST="prod-postgres.c6xa6z6daoyd.us-west-2.rds.amazonaws.com"
   - POSTGRES_DB="todo_db"
   - POSTGRES_USER="postgres"
   name: postgres-config
