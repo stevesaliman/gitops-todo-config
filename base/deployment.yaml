@@ -17,7 +17,7 @@ spec:
                 -   name: todo-app
                     image: dhinojosa/gitops-todo:latest
                     ports:
-                        -   containerPort: 80
+                        -   containerPort: 3000
                     env:
                         -   name: DB_HOST
                             valueFrom:
