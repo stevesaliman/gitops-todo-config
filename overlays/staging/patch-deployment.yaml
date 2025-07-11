@@ -8,7 +8,7 @@ spec:
         spec:
             containers:
                 -   name: todo-app
-                    image: dhinojosa/gitops-todo:2025.07.11.175547
+                    image: dhinojosa/gitops-todo:2025.07.11.180047
                     env:
                         -   name: DB_PASSWORD
                             valueFrom:
